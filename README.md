@@ -1,3 +1,0 @@
-# Pokladna
-School project ...
-Hello there
