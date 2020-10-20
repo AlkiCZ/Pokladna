@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Pokladna",
+    "\\Pokladna\\bin",
+    "\\Pokladna\\bin\\Debug"
   ],
-  "SelectedNode": "\\LICENSE",
+  "SelectedNode": "\\Pokladna\\Form1.resx",
   "PreviewInSolutionExplorer": false
 }
