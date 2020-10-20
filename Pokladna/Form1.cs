@@ -14,26 +14,30 @@ namespace Pokladna
     {
         List<PokladniZaznam> pokladna;
         IRepos repositar;
+
         public Form1()
         {
             InitializeComponent();
-            cBoxRok.SelectedIndex = cBoxRok.Items.IndexOf(DateTime.Now.Year.ToString());
-            cBoxMesic.SelectedIndex = DateTime.Now.Month - 1;
-
-            JsonRepos jsonRepos = new JsonRepos("data.json");
-            jsonRepos.VytvorTestData();
-            repositar = jsonRepos;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            JsonRepos jsonRepos = new JsonRepos("data.json");
+            jsonRepos.VytvorTestData();
+            repositar = jsonRepos;
+
+            cBoxRok.SelectedIndex = cBoxRok.Items.IndexOf(DateTime.Now.Year.ToString());
+            cBoxMesic.SelectedIndex = DateTime.Now.Month - 1;
+
+
+
+
             //repositar = new SqlRepos();
             //repositar = new XmlRepos();
             //pokladna = repositar.NactiVse();
             //foreach (var p in pokladna)
             //{
-            //    LvData.Items.Add(p.DoLvItem());
+            // lvData.Items.Add(p.DoLvItem());
             //}
         }
 
@@ -49,7 +53,5 @@ namespace Pokladna
                 }
             }
         }
-
-      
     }
 }
