@@ -17,6 +17,10 @@ namespace Pokladna
         public double Zustatek { get; set; }
         public string Poznamka { get; set; }
 
+        public PokladniZaznam()
+        {
+        }
+
         public PokladniZaznam(int idPokladniZaznam, int cislo, DateTime datum, string popis, double castka, double zustatek, string poznamka)
         {
             IdPokladniZaznam = idPokladniZaznam;
@@ -41,26 +45,25 @@ namespace Pokladna
 
         public ListViewItem DoLvItem()
         {
-            if (Castka>0)
+            if (Castka > 0)
             {
-               return new ListViewItem(new string[] { Datum.ToString("dd.MM.yyyy")
-                        , Cislo.ToString()
-                        , Popis
-                        ,Castka.ToString()
-                        , ""
-                        , Zustatek.ToString()
-                        ,Poznamka });
+                return new ListViewItem(new string[] { Datum.ToString("dd.MM.yyyy")
+                                         , Cislo.ToString()
+                                         , Popis
+                                         , Castka.ToString()
+                                         , ""
+                                         , Zustatek.ToString()
+                                         , Poznamka });
             }
             else
             {
                 return new ListViewItem(new string[] { Datum.ToString("dd.MM.yyyy")
-                        , Cislo.ToString()
-                        , Popis
-                        ,Castka.ToString()
-                        , ""
-                        , Math.Abs(Castka).ToString()
-                        , Zustatek.ToString()
-                        ,Poznamka });
+                                         , Cislo.ToString()
+                                         , Popis
+                                         , ""
+                                         , Math.Abs(Castka).ToString()
+                                         , Zustatek.ToString()
+                                         , Poznamka });
             }
         }
     }
