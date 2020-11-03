@@ -24,7 +24,9 @@ namespace Pokladna
         {
             JsonRepos jsonRepos = new JsonRepos("data.json");
             //jsonRepos.VytvorTestData();
-            repositar = jsonRepos;
+            SqlRepos sqlRepos = new SqlRepos();
+            //sqlRepos.VytvorTestData();
+            repositar = sqlRepos;
 
             cBoxRok.SelectedIndex = cBoxRok.Items.IndexOf(DateTime.Now.Year.ToString());
             cBoxMesic.SelectedIndex = DateTime.Now.Month - 1;
@@ -49,6 +51,7 @@ namespace Pokladna
         {
             if (cBoxRok.SelectedIndex >= 0 && cBoxMesic.SelectedIndex >= 0)
             {
+                pokladna = repositar.NactiVse();
                 pokladna = repositar.NactiMesic(int.Parse(cBoxRok.SelectedItem.ToString()), cBoxMesic.SelectedIndex + 1);
                 LvData.Items.Clear();
                 foreach (var p in pokladna)
