@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Pokladna
 {
     class SqlRepos : IRepos
-   {
-  private string connString = (@"Data Source=DESKTOP-C0DU3PI\SQLEXPRESS;InitialCatalog=PokladnaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    {
+        private string connString = (@"Data Source=.\ALKISQL;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL15.ALKISQL\MSSQL\DATA\PokladnaDB.mdf;Database=PokladnaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         public void VytvorTestData(List<PokladniZaznam> vychoziZaznamy)
         {
